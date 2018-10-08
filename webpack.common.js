@@ -9,7 +9,7 @@ module.exports = {
     app: './src/apps/app/index.jsx'
   },
   plugins: [
-    new CleanWebpackPlugin(['web/*.*'], {root: path.resolve(__dirname , '..'), verbose: true }),
+    new CleanWebpackPlugin(['dist/*.*'], {root: path.resolve(__dirname , './'), exclude: ['_redirects'], verbose: true }),
     new HtmlWebpackPlugin({
       template: './src/styleguide.html',
       inject: false,
@@ -26,7 +26,7 @@ module.exports = {
   ],
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, './../web/')
+    path: path.resolve(__dirname, './dist/')
   },
   resolve: {
     extensions:['.js','.jsx']
