@@ -20,11 +20,7 @@ module.exports = {
     app: './src/apps/app/index.jsx'
   },
   plugins: [
-<<<<<<< HEAD
     new CleanWebpackPlugin(pathsToClean, cleanOptions),
-=======
-    new CleanWebpackPlugin(['dist/*.*'], {root: path.resolve(__dirname , './'), exclude: ['_redirects'], verbose: true }),
->>>>>>> 34865f570b7170a8e6cb342f6659d46e81e00fba
     new HtmlWebpackPlugin({
       template: './src/styleguide.html',
       inject: false,
