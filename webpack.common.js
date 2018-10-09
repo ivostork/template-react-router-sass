@@ -3,13 +3,24 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+// the path(s) that should be cleaned
+let pathsToClean = [
+  'dist'
+]
+
+// the clean options to use
+let cleanOptions = {
+  root:     path.resolve(__dirname , './'),
+  verbose:  true,
+}
+
 module.exports = {
   entry: {
     styleguide: './src/apps/styleguide/index.jsx',
     app: './src/apps/app/index.jsx'
   },
   plugins: [
-    new CleanWebpackPlugin(['web/*.*'], {root: path.resolve(__dirname , '..'), verbose: true }),
+    new CleanWebpackPlugin(pathsToClean, cleanOptions),
     new HtmlWebpackPlugin({
       template: './src/styleguide.html',
       inject: false,
